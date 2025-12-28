@@ -2,12 +2,12 @@
 
 This repository contains an implementation of the Neural Style Transfer (NST) algorithm as described by Gatys et al. (2016). The project utilizes a pre-trained **VGG-19 network** to extract content and style representations, blending them through a custom optimization process.
 
-## 1. Project Objective
+## Project Objective
 The goal is to synthesize a new image that preserves the semantic objects of a **Content Image** while adopting the artistic textures and color palettes of a **Style Image**.
 
 
 
-## 2. Technical Implementation
+## Technical Implementation
 * **Network Architecture:** We utilize a pre-trained **19-layer VGG network**.
 * **Content Representation:** Captured from the deeper convolutional layers (e.g., `block5_conv2`) to ensure high-level object recognition.
 * **Style Representation:** Extracted from multiple layers (`block1_conv1` through `block5_conv1`) using **Gram Matrices** to identify multi-scale correlations in textures.
@@ -15,14 +15,14 @@ The goal is to synthesize a new image that preserves the semantic objects of a *
 
 
 
-## 3. Experimental Setup (The 4 Combinations)
+## Experimental Setup (The 4 Combinations)
 We tested the algorithm across four distinct pairings using iconic artistic styles and campus landmarks:
 1.  **Style A:** *A Sunday Afternoon on the Island of La Grande Jatte* (Seurat) + **Content 1:** *Alma Mater*
 2.  **Style A:** *A Sunday Afternoon on the Island of La Grande Jatte* (Seurat) + **Content 2:** *Butler Library*
 3.  **Style B:** *Impression, Sunrise* (Monet) + **Content 1:** *Alma Mater*
 4.  **Style B:** *Impression, Sunrise* (Monet) + **Content 2:** *Butler Library*
 
-## 4. Parameter Study & Findings
+## Parameter Study & Findings
 We conducted an ablation study on the factors affecting the output quality:
 
 ### Relative Weights ($\alpha/\beta$)
@@ -36,10 +36,12 @@ We conducted an ablation study on the factors affecting the output quality:
 ### Random Seeds
 * **Finding:** Initializing the output image with different random seeds (noise) results in slight variations in the final color distribution and local textures, but the overall content structure remains robust.
 
-## 5. References
-* [1] Gatys, L. A., Ecker, A. S., & Bethge, M. (2016). "A Neural Algorithm of Artistic Style." *CVPR*.
-* [2] TensorFlow Tutorial on Neural Style Transfer with Eager Execution.
-* [3] VGG-19 Pre-trained Weights from Keras/TensorFlow.
+## Team Members (Group 6)
+Haosheng Ai, Zi Fang, Weiwei Song, Changhao He
 
----
-**Team:** Haosheng Ai, Zi Fang, Weiwei Song, Changhao He
+## References
+[1] Gatys, L. A., Ecker, A. S., and Bethge, M. (2015). **A Neural Algorithm of Artistic Style.** arXiv:1508.06576.  
+[2] **Neural style transfer | TensorFlow Core.** https://www.tensorflow.org/tutorials/generative/style_transfer  
+[3] Singh, M. (2017). **Artistic Style Transfer with Convolutional Neural Network.** Medium; Data Science Group, IITR.  
+[4] TensorFlow (2018). **Neural Style Transfer: Creating Art with Deep Learning using tf.keras and eager execution.** Medium.  
+[5] SreeHarshaNelaturu. **Tensorflow Implementation of Neural Artistic Style Transfer using VGG-19.** GitHub.
